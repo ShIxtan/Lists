@@ -1,0 +1,10 @@
+<ul>
+  <% @user.lists.each do |list| %>
+    <li>
+      <%= list.topic.title %>
+      <%= link_to list.title, list_url(list) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Make a new list!", new_list_url %>

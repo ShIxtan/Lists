@@ -1,0 +1,2 @@
+class ListTopicsController < ApplicationController
+end

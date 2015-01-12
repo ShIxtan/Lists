@@ -1,0 +1,11 @@
+<form id="login" action="<%= session_url %>" method="post">
+    <%= auth_token %>
+
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" value="<%= @user.username %>" id="user_username">
+
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]" id="user_password">
+
+    <input type="submit" value="Log In" id="Log In">
+</form>

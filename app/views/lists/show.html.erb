@@ -1,0 +1,21 @@
+<h1><%= @list.topic.title %></h1>
+<%= @list.topic.description %>
+<br><br>
+
+<form id="form_id" action="<%= list_list_items_url(@list) %>" method="post">
+  <%= auth_token %>
+
+  <label for="list_item_text">text</label>
+  <input type="text" name="list_item[text]" id="list_item_text" autofocus>
+
+  <input type="submit" value="Add" id="Add">
+</form>
+
+<ol reversed>
+  <% @list.list_items.each do |item| %>
+    <li>
+      <%= item.text %>
+      <%= link_to "X", list_list_item_url(@list, item), method: :delete %>
+    </li>
+  <% end %>
+</ol>

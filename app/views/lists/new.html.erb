@@ -1,0 +1,18 @@
+<form id="new list" action="<%= lists_url %>" method="post">
+  <%= auth_token %>
+
+  <label for="list_title">title</label>
+  <input type="text" name="list[title]" value="<%= @list.title %>" id="list_title">
+
+  <select id="list_list_topic_id" name="list[list_topic_id]">
+    <option value="0" "selected">Choose Topic</option>
+    <% ListTopic.all.each do |topic| %>
+      <option value="<%= topic.id %>"
+        <%= "selected" if topic.id == @list.list_topic_id %>
+        ><%= topic.title %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Start List" id="Start List">
+
+</form>
